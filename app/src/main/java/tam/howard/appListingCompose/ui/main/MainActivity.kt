@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tam.howard.appListingCompose
+package tam.howard.appListingCompose.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import tam.howard.appListingCompose.ui.listing.ListingActivity
 import tam.howard.appListingCompose.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +35,8 @@ class MainActivity : AppCompatActivity() {
                 MyApp()
             }
         }
+
+        startActivity(Intent(this, ListingActivity::class.java))
     }
 }
 
