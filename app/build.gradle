@@ -38,6 +38,27 @@ android {
         }
     }
 
+    flavorDimensions "env"
+    productFlavors {
+        dev {
+            dimension "env"
+            applicationIdSuffix ".dev"
+            resValue "string", "APP_NAME", "App Listing - Compose DEV"
+            buildConfigField "boolean", "SHOW_LOG", "true"
+        }
+        stg {
+            dimension "env"
+            applicationIdSuffix ".stg"
+            resValue "string", "APP_NAME", "App Listing - Compose STG"
+            buildConfigField "boolean", "SHOW_LOG", "true"
+        }
+        prod {
+            dimension "env"
+            resValue "string", "APP_NAME", "App Listing - Compose"
+            buildConfigField "boolean", "SHOW_LOG", "false"
+        }
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
         useIR = true
@@ -47,10 +68,8 @@ android {
         compose true
 
         // Disable unused AGP features
-        buildConfig false
         aidl false
         renderScript false
-        resValues false
         shaders false
     }
 
