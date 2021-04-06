@@ -1,5 +1,6 @@
 package tam.howard.appListingCompose.ui.listing
 
+import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -13,6 +14,10 @@ import tam.howard.appListingCompose.ui.theme.MyTheme
 @AndroidEntryPoint
 class ListingActivity : BaseActivity<ListingViewModel>() {
     override val vm: ListingViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     @Composable
     override fun ContentView() {
